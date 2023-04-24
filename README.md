@@ -1,5 +1,8 @@
 # MACS341FINALPROJECT
 
+Author : Johnathan Park ( PARKJX22@juniata.edu )
+Collaborator : Mansi Chandra ( CHANDMX20@juniata.edu )
+
 SIRtest.py is a GUI file that allows you to check various results with graphs while modifying various parameters of the SIR standard model.
 
 The tkinter, matplotlib, and numpy packages are required to run this file. numpy and matplotlib are installed by default with Python installed, so no other additional work is required, but tkinter must be installed separately.
