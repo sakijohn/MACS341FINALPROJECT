@@ -5,7 +5,88 @@
 - Mansi Chandra ( CHANDMX20@juniata.edu )
 
 
-## SIRtest.py
+## SIR model simulation for COVID-19 dynamics
+
+### file : Changing the disease dynamics.py
+
+This code simulates the spread of COVID-19 using the SIR (Susceptible-Infected-Recovered) model, which divides the population into three compartments: susceptible, infected, and recovered. The model assumes that people can transition between compartments based on certain parameters, such as the infection rate and recovery rate.
+<br><br>
+The simulation considers three different strategies for controlling the spread of COVID-19, each with different values for the infection rate and recovery rate. The strategies are:
+<br>
+<ol>
+  <li>Strategy 1: lower infection rate (beta = 0.25) while keeping the recovery rate constant (gamma = 0.1)</li>
+  <li>Strategy 2: lower recovery rate (gamma = 0.125) while keeping the infection rate constant (beta = 0.3)</li>
+  <li>Strategy 3: increase the proportion of the population initially immune to the disease (by setting S0 to 90% of the population), while keeping the infection and recovery rates constant.</li>
+</ol>
+<br>
+The code defines two functions:
+<code>SIR_model</code> calculates the differential equations for the SIR model, and <code>simulate_SIR_model</code> runs the simulation for the given set of parameters and number of days.
+<br>
+The results of the simulation are plotted in two figures:
+<br>
+<ol>
+<li>A line plot of the percentage of the population that is infectious over time for each strategy.</li>
+<li>A line plot of the cumulative percentage of the population that has been infected over time for each strategy, scaled by a factor of 10.</li>
+</ol>
+<br>
+The figures illustrate how different strategies can affect the spread of the disease, as well as the overall impact on the population.
+<br>
+
+
+
+## SIR Simulation - outputs CSV file and plots most infected day
+
+### file : most infected date.py
+
+This code simulates the spread of an infectious disease using the SIR (Susceptible-Infected-Recovered) model. The simulation calculates the number of susceptible, infected, and recovered individuals over time, assuming a fixed population size, transmission rate (beta), and recovery rate (gamma).
+
+### Getting Started
+To run the simulation, you need to have Python3 installed on your computer, as well as the following packages:
+<li>numpy</li>
+<li>pandas</li>
+<li>matplotlib</li>
+<br>
+You can install these packages using pip: 
+```bash
+$ pip install numpy pandas matplotlib
+```
+
+To run the simulation, simply execute the following command in your terminal
+```bash
+python most_infected _date.py
+```
+
+### Parameters
+The simulation has the following parameters:
+<br>
+The script will save the results of the simulation to an Excel file named <code>sir_simulation_results.xlsx</code>, and will also generate a plot showing the most infected day as a function of the initial infected rate.
+<ol>
+<li><code>beta</code>: The transmissioin rate, representing the rate at which susceptible individuals become infected upon contact with infected individuals.</li>
+<li><code>gamma</code>: The recovery rate, representing the rate at which infected individuals recover and become immune.</li>
+<li><code>population</code>: The total size of the population.</li>
+<li><code>days</code>: The number of days to simulate.</li>
+<li><code>initial_infection_rates</code>: An array of initial infection rates to simulate, expressed as a percentage of the population.</li>
+</ol>
+
+### Output
+The simulation outputs a DataFrame containing the following columns:
+<ol>
+<li><code>Initial Infected Rate</code>: The initial infection rate used in the simulation, expressed as a percentage of the population.</li>
+<li><code>Most Infected Day</code>: The day with the highest number of infected individuals.</li>
+<li><code>Infected Cases Per Day</code>: An array of the number of infected individuals per day.</li>
+</ol>
+The results are saved to an Excel file named <code>sir_simulation_results.xlsx</code>.
+
+### Plot
+The simulation also generates a plot showing the most infected day as a function of the initial infected rate. The plot has the following axis labels:
+<li>x-axis: Initial Infected Rate (%)</li>
+<li>y-axis: Most Infected Day</li>
+<li>title: Most Infected Day vs. Initial Infected Rate</li>
+
+## Standard SIR model simulator GUI
+
+### file : SIRtest.py
+
 SIRtest.py is a GUI file that allows you to check various results with graphs while modifying various parameters of the SIR standard model.
 
 The tkinter, matplotlib, and numpy packages are required to run this file. numpy and matplotlib are installed by default with Python installed, so no other additional work is required, but tkinter must be installed separately.
@@ -33,3 +114,7 @@ Note: If you're using a virtual environment, make sure it's activated before run
 After the installation is complete, you can verify that tkinter is installed by opening a Python interactive shell or an Integrated Development Environment (IDE) that supports Python, and then typing the following command:
   import tkinter
 If you don't see any errors, then tkinter is successfully installed on your system.
+
+<br><br>
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
