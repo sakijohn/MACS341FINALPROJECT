@@ -23,7 +23,9 @@ The code defines two functions:
 <code>SIR_model</code> calculates the differential equations for the SIR model, and <code>simulate_SIR_model</code> runs the simulation for the given set of parameters and number of days.
 <br>
 The results of the simulation are plotted in two figures:
+
 <br>
+
 <ol>
 <li>A line plot of the percentage of the population that is infectious over time for each strategy.</li>
 <li>A line plot of the cumulative percentage of the population that has been infected over time for each strategy, scaled by a factor of 10.</li>
@@ -31,8 +33,53 @@ The results of the simulation are plotted in two figures:
 <br>
 The figures illustrate how different strategies can affect the spread of the disease, as well as the overall impact on the population.
 <br>
+<br>
 
+<h2> Herd Immunity Plot </h2>
+<h3> file: Herd immunity by R nought.py </h3>
 
+This Python script produces a plot that shows the percentage of the population that needs to be immune in order to achieve herd immunity, as a function of the basic reproduction number (R0) of a disease. The plot is generated using the Matplotlib library and NumPy library.
+
+<h3> Prerequisites </h3>
+
+This script requires the following Python libraries to be installed:
+
+<li>Matplotlib</li>
+<li>numpy</li>
+<br>
+You can install these packages using pip: 
+
+```bash
+$ pip install numpy matplotlib
+```
+
+<h3> Getting Started </h3>
+
+To run the script, simply execute the following command in your terminal:
+
+```bash
+python3 Herd_immunity_by_R_nought.py
+```
+
+<h3> Parameters </h3>
+
+The script defines a single function<code>herd_immunity</code> that takes one parameter <code>r_0</code>, which represents the basic reproduction number of a disease. The function returns the fraction of the population that needs to be immune in order to achieve herd immunity.
+
+<br>
+
+The script also defines an array <code>r_0_vals</code> that contains a range of values for the basic reproduction number, and computes the corresponding values for the fraction of the population that needs to be immune using the <code>herd_immunity</code> function.
+
+### Output
+
+The script produces a plot that shows the percentage of the population that needs to be immune in order to achieve herd immunity as a function of the basic reproduction number of a disease. The plot has the following characteristics:
+<li>The x-axis represents the basic reproduction number (R0).</li>
+<li>The y-axis represents the fraction of the population that needs to be immune for herd immunity.</li>
+<li>The title of the plot is "Percentage of Population Needed for Herd Immunity by R0".</li>
+<li>The x-axis label is "R0".</li>
+<li>The y-axis label is "Fraction Immune for Herd Immunity".</li>
+<li>The y-axis limits are set to range from 0 to 1.</li>
+<br>
+<br>
 
 ## SIR Simulation - outputs CSV file and plots most infected day
 
@@ -41,25 +88,35 @@ The figures illustrate how different strategies can affect the spread of the dis
 This code simulates the spread of an infectious disease using the SIR (Susceptible-Infected-Recovered) model. The simulation calculates the number of susceptible, infected, and recovered individuals over time, assuming a fixed population size, transmission rate (beta), and recovery rate (gamma).
 
 ### Getting Started
+
 To run the simulation, you need to have Python3 installed on your computer, as well as the following packages:
+
 <li>numpy</li>
 <li>pandas</li>
 <li>matplotlib</li>
+
 <br>
+
 You can install these packages using pip: 
+
 ```bash
 $ pip install numpy pandas matplotlib
 ```
 
-To run the simulation, simply execute the following command in your terminal
+To run the simulation, simply execute the following command in your terminal:
+
 ```bash
-python most_infected _date.py
+python3 most_infected _date.py
 ```
 
 ### Parameters
+
 The simulation has the following parameters:
+
 <br>
+
 The script will save the results of the simulation to an Excel file named <code>sir_simulation_results.xlsx</code>, and will also generate a plot showing the most infected day as a function of the initial infected rate.
+
 <ol>
 <li><code>beta</code>: The transmissioin rate, representing the rate at which susceptible individuals become infected upon contact with infected individuals.</li>
 <li><code>gamma</code>: The recovery rate, representing the rate at which infected individuals recover and become immune.</li>
@@ -82,6 +139,7 @@ The simulation also generates a plot showing the most infected day as a function
 <li>x-axis: Initial Infected Rate (%)</li>
 <li>y-axis: Most Infected Day</li>
 <li>title: Most Infected Day vs. Initial Infected Rate</li>
+<br><br>
 
 ## Standard SIR model simulator GUI
 
