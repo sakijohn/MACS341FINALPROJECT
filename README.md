@@ -15,7 +15,7 @@ The simulation considers three different strategies for controlling the spread o
 <br>
 <ol>
   <li>Strategy 1: lower infection rate (beta = 0.25) while keeping the recovery rate constant (gamma = 0.1)</li>
-  <li>Strategy 2: lower recovery rate (gamma = 0.125) while keeping the infection rate constant (beta = 0.3)</li>
+  <li>Strategy 2: higher recovery rate (gamma = 0.125) while keeping the infection rate constant (beta = 0.3)</li>
   <li>Strategy 3: increase the proportion of the population initially immune to the disease (by setting S0 to 90% of the population), while keeping the infection and recovery rates constant.</li>
 </ol>
 <br>
